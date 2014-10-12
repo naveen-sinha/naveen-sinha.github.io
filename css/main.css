@@ -96,11 +96,11 @@ body {
     height: 100%;
     padding: 0;
     margin: 0;
-    overflow: hidden;
 }
 
 body {
-    background-color: #7f8c8d;
+    /*background-color: #7f8c8d;*/
+    background-color: #ecf0f1;
 
     font-family: 'Alegreya Sans', sans-serif;;
     font-size: 16px;
@@ -108,6 +108,20 @@ body {
 
     max-width: 800px;
     margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, p {
+    text-align: left
+}
+
+h1 {
+    margin: 1em 0 0.2em 0;
+    padding-top: 0;
+}
+
+h2 {
+    margin: 0.2em 0 1em 0;
+    padding-top: 0;
 }
 
 a {
@@ -128,86 +142,6 @@ a:hover {
     font-size: 0.9em;
 }
 
-.credit {
-    position: absolute;
-    bottom: 20px;
-    left: 24px;
-    margin: 0;
-    z-index: 1;
-    font-size: 0.6em;
-}
-
-.credit a {
-    color: #34495e;
-    font-weight: 400;
-    text-decoration: none;
-}
-
-.layer {
-    clear: both;
-    position: float;
-}
-
-.layer h1, h2, h3, h4, .credit {
-    text-align: center;
-}
-
-.layer h1 {
-    top: 10%;
-    margin: 0;
-    padding: 2%
-    font-size: 4em;
-}
-
-.layer h2 {
-    top: 7%;
-    margin: 0;
-    padding: 2%
-    font-size: 1.5em;
-}
-
-.layer h3 {
-    top: 5%;
-    margin: 0;
-    padding: 2%
-    font-size: 1.2em;
-}
-
-.layer h4 {
-    font-weight: 400;
-    top: 5%;
-    margin: 2% 0 2% 0;
-    padding: 2%
-    font-size: 1em;
-}
-
-.layer h5 {
-    margin: 0;
-    top: 5%;
-    padding: 2%
-}
-
-.layer p {
-    margin: 0 0 2% 0;
-    text-align: left;
-    padding: 2%
-    top: 5%;
-
-}
-
-.layer img {
-    display: block;
-    margin: 2% auto;
-    position: relative;
-    padding: 2%
-    top: 5%;
-    width: 60%;
-}
-
-
-.layer {
-    background: #fff;
-}
 
 .bullets {
     position: absolute;
@@ -244,14 +178,6 @@ a:hover {
 @media screen and (max-width: 400px) {
     body {
         font-size: 12px;
-    }
-
-    .layer h2 {
-        font-size: 2em;
-    }
-
-    .layer h2 {
-        font-size: 1.5em;
     }
 
     .bullets li {
