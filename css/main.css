@@ -175,6 +175,10 @@ a:hover {
             background: #34495e;
         }
 
+td {
+    vertical-align: top;
+}
+
 @media screen and (max-width: 400px) {
     body {
         font-size: 12px;
