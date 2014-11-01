@@ -128,6 +128,10 @@ a {
     color: #34495e;
 }
 
+.icon-flair {
+    color: #c0392b;
+}
+
 a:hover {
     color: #8e44ad;
     text-decoration: underline;
