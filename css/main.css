@@ -115,11 +115,16 @@ h1, h2, h3, h4, h5, p {
 }
 
 h1 {
-    margin: 1em 0 0.2em 0;
+    margin: 1em 0 0.1em 0;
     padding-top: 0;
 }
 
 h2 {
+    margin: 0.2em 0 1em 0;
+    padding-top: 0;
+}
+
+h3 {
     margin: 0.2em 0 1em 0;
     padding-top: 0;
 }
