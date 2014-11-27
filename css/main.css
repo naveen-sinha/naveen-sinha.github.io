@@ -115,11 +115,13 @@ h1, h2, h3, h4, h5, p {
 }
 
 h1 {
+    color: #c0392b;
     margin: 1em 0 0.1em 0;
     padding-top: 0;
 }
 
 h2 {
+    font-size: 1em;
     margin: 0.2em 0 1em 0;
     padding-top: 0;
 }
@@ -130,7 +132,8 @@ h3 {
 }
 
 a {
-    color: #34495e;
+    color: #c0392b;
+    text-decoration: none;
 }
 
 .icon-flair {
@@ -138,7 +141,7 @@ a {
 }
 
 a:hover {
-    color: #8e44ad;
+    color: #c0392b;
     text-decoration: underline;
 }
 
@@ -183,6 +186,14 @@ a:hover {
             cursor: default;
             background: #34495e;
         }
+
+table.timeline td {
+    padding: 0 1em 0 1em;
+}
+
+thead.timeline td {
+    color: #c0392b;
+}
 
 table.kanban {
     /*border: 1px solid #ccc;*/
