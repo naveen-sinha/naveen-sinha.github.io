@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <!-- Enable code highlighting -->
+        <!-- <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script> -->
+        <script type="text/javascript" src="js/shCore.js"></script>
+        <script type="text/javascript" src="js/shBrushJScript.js"></script>
+        <script type="text/javascript" src="js/shBrushPython.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/shCoreDefault.css"/>
+        <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+        <!-- Use custom font -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <section class="wrapper">
+
+            <section class="title-bar">
+                <h1>Using Fitbit for a Better 2014</h1>
+                <h2>Applying insights from activity tracking to the new year</h2>
+                <h4>by Naveen Sinha</h4>
+            </section>
+
+            <article class="content">
+
+                <h3>Summary</h3>
+
+                <h4>I thoroughly enjoy to-do lists, whether they are an ambitious set of New Year's goals or a daily entry in my Bullet Journal.</h4>
+
+                <p>Over the past decade, I've realized that the power from these lists is all about the <strong>process</strong> of adding, doing, defering, and deleting items rather than the actual <strong>product</strong>, whether it is an Evernote collection or a Moleskine notebook.</p>
+
+                <p>Activity trackers, such as Fitbit, can do far more than count steps; they provide a way to visually summarize large amounts of quantitative information about the past year.</p>
+
+                <p>During the past summer, after many months of failed experiments, I was able to accomplish more in lab in three months than the previous three years, and succesfully defended my PhD in Septmeber. Afterwards I completed a two-moth career accelerator program in Product and Design at the Startup Institute in Boston and worked with the Hackfit team to spread fitness-themed startup events across the country.</p>
+
+                <p><strong>How might analyzing my data from Fitbit shed light on when I was most productive, so that I could apply these insights to 2014?</strong></p>
+
+                <p>The next five sections show how I gained personal insights from my Fitbit data.</p>
+
+                <h3>Step 1. Import the data</h3>
+
+                <p>Although the Fitbit dashboard provides an elegant summary of my daily, weekly, and yearly data, I wanted more control to analyze and present the information in different ways, using the skills that I developed in grad school.</p>
+
+                <p>A <a href="http://quantifiedself.com/2013/02/how-to-download-fitbit-data-using-google-spreadsheets/">script</a> by Ernesto Ramirez makes downloading personal data from Fitbit a painless process. After getting a Developer Account from the Fitbit Developer <a href="dev.fitbit.com">website</a>, I was able to download my data in about 10 minutes.</p>
+
+                <figure><img alt="screen shot of a Google document of my Fitbit data" class="plot" src="img/screen-shot-gdoc.png"></figure>
+
+                <p>Although I spent most of my thesis writing image analysis software in MATLAB, all my friends raved about the capabilities of R, so I decided this would be a great opportunity to learn a new programming language.</p>
+
+                <p>As one examples of the power of R, these three lines take all the data from the Google spreadsheet and convert it into a data frame, called <span class="code">mydata</span>.</p>
+
+                <pre class="brush: python;">
+                require(RCurl)
+                myCSV <- getURL("[custom URL]")
+                mydata <- read.csv(textConnection(myCSV))
+                </pre>
+
+<!--                 <pre class="brush: js;">
+                function helloSyntaxHighlighter()
+                {
+                    return "hi!";
+                }
+                </pre> -->
+
+                <p>The main trick was to convert the string for the date to a <span class="code">Date</span> object in R, so that it would be sorted properly. I also created a new column to display the days of the week in chronological, rather than alphabetical, order.</p>
+                        
+                <pre class="brush: python;">
+                mydata$date <- as.Date(mydata$date, "%m/%d/%Y")
+                mydata$days <- weekdays(mydata$date)
+                days_names = c('sun', 'mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun')
+                mydata$days_f = factor(mydata$days, levels=days_names)
+                </pre>
+
+
+                <h3>Step 2. Parse the data</h3>
+
+                <p>Looking at scatter plots of step counts and other stastics wasn't especially enilightening; the numbers fluctuated wildly from day to day. I realized that I needed to slice the data in different ways to elucidate any type of patterns.</p>
+
+                <p>Although my day-to-day activity varies by over a factor of two, my weekly patterns are more consistent. I typically do CrossFit on Mondays, Thursdays, and Saturdays; stadium runs with the November Project on Wednesdays; and long runs around Boston on Sundays.</p>
+
+                <p>To isolate the effect of the day of the week on any overall trends, I used the <span class="code">facet grids</span> in the <span class="code">ggplot</span> library.</p>
+
+                <pre class="brush: python;">
+                p <- ggplot(mydata, aes(date, steps, fill=(weekdays(date)), alpha=factor(steps))) 
+                    + geom_bar(stat="identity", width=5)
+                p + facet_grid(days_f ~ .) + theme(legend.position='none') 
+                    + xlab('Date') + ylab('Steps') + labs(title="Steps per day")
+                </pre>
+
+                <p>I initially displayed the data as bar charts with the opacity linked to the value.</p>
+
+                <h4>Bar graph</h4>
+
+                <p>I feel fortunate to not be trapped sitting in a cubicle for 10 hours a day; over the past year I've spent my time running between experiments in lab, meeting with people in startups around Boston, and finding new coffee shops to work in.</p>
+
+                <p>By visualizing the data in these different ways, I can see the effect of several changes to my routine.</p>
+                <ol>
+                    <li>My renewed interest in distance running towards the end of the year is evident in the Sunday row.</li>
+                    <li>The increased step counts on Wednesdays in the last third of the year comes from joining the Novemeber Project stadium runs.</li> 
+                    <li>The overall rise and fall during the summer months comes from running time-lapse experiments in lab, followed by many hours spent writing my dissertation in cafes.</li>
+                </ol>
+
+                <figure><img alt="steps per day, segmented by weekday" class="plot" src="img/steps-by-day.png"></figure>
+
+                <h4>Calendar Heat Map</h4>
+
+                <p>As a more compact way to see all the data at once, I switched to a calendar heat map, based on the <a href="flowingdata.com/2012/03/15/calendar-heatmaps-to-visualize-time-series-data/">tutorial</a> at Flowing Data.</p>
+
+                <p>Each color corresponds to a different type of measurement and the darkness of the color indicates the value. Missing values are white.</p>
+
+                <figure><img alt="calendar heat map of Fitbit data" class="plot" src="img/heat-all.png"></figure>
+
+                <h5>Activity (minutes very active) and Distance</h5>
+
+                <p>The overall pattern of activity reveals changes in my productivity and lab and my exercise routine:</p>
+
+                <ol>
+                    <li><strong>mid-April to mid-August</strong>: The final sprint to the finish line of grad school involved lots of (literal) running back and forth to lab.</li>
+                    <li><strong>mid-September to present</strong>: Right after I turned in my thesis, I began running the Harvard Stadium with the November Project every Wednesday morning.
+                    <li><strong>early-to-mid October</strong>: I started doing a "deck a day" workout in October, involving 52 sets of either push-ups or sit-ups. Sadly, this involved almost no movement of my Fitbit if I wore it at my waist.</li>
+                </ol>   
+
+                <h5>Calories (total intake)</h5>
+
+                <p>My caloric intake is definitely my least accurate metric with Fitbit. I have no idea how many calories are in a charcuterie plate at a restaurant, I don't carefully measure out the amount of peanut butter I consume, and I don't keep track of the calories in my cocktails when going to a bar.</p> 
+
+                <p>However, I can still pick out several key events from the chart:</p>
+
+                <ol>
+                    <li><strong>early April</strong>: A bad oyster wrecked my stomach on April 1st, and it took me days to eat nromally again.</li>
+                    <li><strong>late September</strong>: I got a really bad case of food poisoning, barely ate for several days, and lost eight pounds.</li>
+                </ol>
+
+
+                <h5>Sleep (time in bed)</h5>
+
+                <p>I typically sleep around six hours per weeknight and more on the weekends. Beyond that, the consistency of my recording seems correlated with work-related stress:</p>
+
+                <ol>
+                     <li><strong>mid-April to mid-August</strong>: Fewer distractions during the final months of doing experiments and writing my dissertation was linked to diligent sleep tracking.</li>
+                     <li><strong>mid-September to late-October</strong>: Dissertation subsmitted! Sleep tracking is no longer a priority.</li>
+                     <li><strong>early December</strong>: The final weeks of Startup Institute were focused on wrapping up my project with Ovuline and preparing my 60-second pitch on the last day.</li>
+                     <li><strong>early January to now</strong>: As part of my New Year resolutions, I started using the Fitbit logs more diligently.</li>
+                </ol>
+
+
+                <h3>Step 3. Look at the distributions</h3>
+
+                <p>One of my problems with Fitbit is the 10,000 step per day goal. My daily schedule is variable enough that my total number of steps can easily vary by a factor of two. To quantify this effect, I looked at histograms for some key metrics about activity.</p>
+
+                <pre class="brush: python;">
+                # plot histograms of activity levels
+                source("multiplot.r")
+
+                p1 <- ggplot(mydata, aes(x=minutesSedentary, fill=..count..)) + theme(legend.position="none") 
+                p1 <- p1 + scale_fill_gradient("Count", low = "black", high = "blue") 
+                p1 <- p1 + geom_histogram(origin=0, binwidth=30) + xlab("Sedentary (min.)")
+
+                p2 <- ggplot(mydata, aes(x=minutesLightlyActive, fill=..count..)) + theme(legend.position="none")
+                p2 <- p2 + scale_fill_gradient("Count", low = "black", high = "green") 
+                p2 <- p2 + geom_histogram(origin=0, binwidth=10) + xlab("Lightly Active (min.)")
+
+                p3 <- ggplot(mydata, aes(x=minutesFairlyActive, fill=..count..)) + theme(legend.position="none")
+                p3 <- p3 + scale_fill_gradient("Count", low = "black", high = "yellow") 
+                p3 <- p3 + geom_histogram(origin=0, binwidth=10) + xlab("Fairly Active (min.)")
+
+                p4 <- ggplot(mydata, aes(x=minutesVeryActive, fill=..count..)) + theme(legend.position="none")
+                p4 <- p4 + scale_fill_gradient("Count", low = "black", high = "red") 
+                p4 <- p4 + geom_histogram(origin=0, binwidth=10) + xlab("Fairly Active (min.)")
+
+                multiplot(p1, p3, p2, p4, cols=2)
+                </pre>
+
+                <p>All of my levels of activity show a fairly symmetric distribution around the mean.</p>
+
+                <p>This suggests that I am considerably more active than the minimum required for my daily commute; in that case there would be a lop-sided distribution with a long tail to the right.</p>
+
+                <p>Below are histograms for each of my activity levels:</p>
+
+                <figure><img alt="histograms of each level of activity" class="plot" src="img/activity-hist.png"></figure>
+
+                <p>The time spent sedentary shows a second, smaller peak at longer times. These probably correspond to times when I was sick and only barely active.</p>
+
+                <p>The width of these distributions suggests reasonable targets for increasing my activity levels. One good target could be to shift my lightly active time to at least 150 minutes per day, which is roughly equal to the current median.</p>
+                
+                <h3>Step 4. Look for correlations</h3>
+
+                <p>Are there any relationship between the amount of time I slept at night and various other metrics about my life?</p>
+
+                <p>As a quick way to check, I checked for patterns in scatter plots of pairs of each of the variables. A statistician could give a more precise answer, but from my point of view, any note-worthy trends would show up as an elongated blob.</p>
+
+                <p>Below is an example showing the various metrics plotted against the time I speent asleep each night.</p>
+
+                <figure><img alt="scatter plots of activity levels plotted against time asleep" class="plot" src="img/activity-corr.png"></figure>
+
+                <p>Sleep seems mostly independent of everything else. The amount of time I spend awake during the night appears uncorrelated with the total time in bed. There's a slight correlation between more steps and more very active minutes, which is probably from waking up early for a pre-dawn run. The amount of food I eat seems totally unrelated to the amount that I sleep.</p>
+
+                <p>To investigate the full set of pair-wise correlations, I used the <span class="code">corrplot</span> package, avaiable <a href="http://cran.r-project.org/web/packages/corrplot/index.html">here</a>.
+
+                <p>You can see a summary of the correlation coefficients in the plot below. The size of the circle indicates the strength of the correlation and the color indicates whether it is positive (blue) or negative (red).</p>
+
+                <figure><img alt="correlation matrix between all key variables" class="plot" src="img/corr-matrix.png"></figure>
+
+                <p>The full set of correlations does not yield any surprises. More time spent fairly or very active is positively correlated with an increase in the number of steps and more time spend sendentary (rest) is negatively correlated. Sleep is negatively correlated with all the levels of activity, since they are mutually exclusive. My food intake seems uncorrelated with all the other metrics.</p>
+
+                <h3>Step 5. Investigate the extremes</h3>
+
+                <p>Rather than doing regressions to try to find weak correlations, I tried to investigate what happened during the extremes for actionable ideas from the data.</p>
+
+                <p>To start this analysis, I sorted the data according to total step count and looked at which days I accumulated the highest total. Then I went back to my Fitbit dahsboard to see the sub-hourly data and matched that with my activities on Google calendar.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>rank</td>
+                            <td>date</td>
+                            <td>steps</td>
+                            <td>notes</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>05/17/2013</td>
+                            <td>31,081</td>
+                            <td>Mid-distance run, time-lapse experiments</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>07/20/2013</td>
+                            <td>29,936</td>
+                            <td>Mid-distance run, time-lapse experiment</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>04/09/2013</td>
+                            <td>29,193</td>
+                            <td>Crossfit, meetings</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>06/05/2013</td>
+                            <td>28,983</td>
+                            <td>Crossfit, meetings, time-lapse</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>10/15/2013</td>
+                            <td>28,699</td>
+                            <td>Post-midnight walk home from party</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Surprisingly, none of my long-run days made the top five. All of the most active days were the result of walking (and sometimes running) between time-lapse experiments in lab and meetings around Cambridge.</p>
+
+                <p>Being really stressed out about my defense did boost my step count; I was going on a mile-long run pretty much every night as a break from typing at my computer.<p>
+
+                <p>Below is the hourly data for July 20th, the day with the second-highest step count. I ran to lab to check on a time-lapse experiment, did CrossFit, stopped by lab, went to two cafes, and went for a short run at night.</p>
+
+                <figure><img alt="hourly data" src="img/hourly-130720.png"></figure>
+
+                <p>This suggests that for increasing my movement,the big gains aren't from longer morning runs, but rather finding a more active work environment.</p>
+
+                <h3>What's next?</h3>
+
+                <p>Going back to the original question, how does this information from Fitbit help me become a more productive person?</p>
+
+                <p>The main challenge is <strong>unraveling correlation from causation</strong>. For example, I was running more during my most productive months leading up to my thesis defense, but that was linked to numerous trips to and from my time-lapse microscope setup.</p>
+
+                <p>The correlations between the various measurements were pretty weak or trivial &mdash; fortunately, I can take signficant steps to switch up routine on specific days and look for measurable differences in the calendar heat map.</p>
+
+                <p>In other words, I could turn my own daily rituals into a science experiment.</p>
+
+                <p>Some of the questions that I wonder are:</p>
+                <ol>
+                    <li>How would my activity levels change by a new office arrangement (e.g. treadmill desk or pull-up bar)?</li>
+                    <li>How could a new exercise routine (e.g. yoga or barre classes) affect my overall acitivity?</li>
+                    <li>How do recovery days affect activity on the following days?</li>
+                    <li>Could drinking more water speed my recovery?</li>
+                    <li>How does caffeine intake affect my activity levels throughout the day?</li>
+                    <li>How does alcohol affect my activity the next day?</li>
+                </ol>
+
+                <p>Although it's not a current feature of the Fitbit dashboard, for me the <strong>calendar heat map</strong> seems like an effective tool for finding links between my physical activity, diet, and personal productivity. Specifically, I find the most value from being able to select a specific date from a wide field of view, then go back into my journal and Google calendar to see what was happening at that time.</p>
+
+                <p>For me, the true potential of Fitbit lies not with new technology, but rather its active and growing user base. All the data from the trackers is just a <strong>starting point for better conversations</strong> about how to live a more fit life.</p>
+            </article>
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+            <script src="js/plugins.js"></script>
+            <script src="js/main.js"></script>
+
+
+            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+            <script>
+                (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                e.src='//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+                ga('create','UA-XXXXX-X');ga('send','pageview');
+            </script>
+
+        </section>
+
+        <footer>
+            <p>&copy; 2014 by Naveen N. Sinha</p>
+        </footer>
+    </body>
+</html>
