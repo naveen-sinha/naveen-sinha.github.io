@@ -1,43 +1,82 @@
-<!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Naveen N. Sinha</title>
 
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+    <!-- ICONS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- Add cool fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700,700italic' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/kontext.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
-        <!-- ICONS -->
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
 
-        <!-- Add cool fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700,700italic' rel='stylesheet' type='text/css'>
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
 
-        <!-- BxSlider -->
-        <!-- bxSlider CSS file -->
-        <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
 
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <link href='//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="material.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Naveen N. Sinha</span>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 
-        <!-- Add your site or application content here -->
-        <article>
-
-            <h1>Naveen N. Sinha</h1>
-            <h2>data analysis | applied physics | food + science</h2>
-
-            <h4><span class="icon-flair">Welcome<span></h4>
+            <h3>Welcome</h3>
 
             <p><strong>My mission is to make the world of data more visceral and emotional.</strong> This theme runs through my PhD in Applied Physics at Harvard, several collaborations between chefs and scientists, and my current job at Fitbit. </p>
 
@@ -60,19 +99,6 @@
                 <tr><td><strong>Fitbit</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td><i class="fa fa-square"></i></td><td><i class="fa fa-square"></i></td><td><i class="fa fa-square"></i></td></tr>
             </table>
 
-
-            <!-- <h3><i class="fa fa-line-chart icon-flair"></i>&emsp;What I do</h3>
-
-            <p>I think of my job as being a <span class="icon-flair">sous chef</span> for data, as I help turn raw numbers into dashboards with actionable information.</p>
-
-            <p>Departments like Research & Department provide the ingredients, my team processes them, and sends them out to the "front of the house" as dashboards. This metaphor leads to the following lessons I've learned:</p>
-
-            <ol>
-                <li><span class="icon-flair">Have a sense of urgency: </span>just like how your efficiency with a knife limits your speed in the kitchen, your effieciency at choosing the right tools, writing efficient queries, and rapidly communicating your results limits the number of projects you can take on.</li>
-                <li><span class="icon-flair">Taste everything: </span>in this case, the equivalent of tasting is checking for duplicates, missing records, and other mistakes that could ruin the final product.</li>
-                <li><span class="icon-flair">Track everything: </span>just like how a well-run kitchen knows their exact food costs and the cooking times for each dish, knowing the time and resources required for each data processing job is essential.</li>
-            </ol> -->
-
             <h3><i class="fa fa-code-fork icon-flair"></i>&emsp;What's my current <strong>tryo</strong>?</h3>
 
             <p>A tryo is a one- to four-week long trial of a new habit to see if it's a good fit. You can pick whichever analogy appeals to you more:</p>
@@ -91,7 +117,7 @@
                     <th class="kanban">Current habits</th>
                 </tr>
                 <tr>
-                    <td class="kanban">                        
+                    <td class="kanban">
                         <ul>
                             <li>No sweets, except super-dark chocolate</li>
                         <ul>
@@ -128,11 +154,11 @@
                     <th class="kanban">Queue</th>
 
                     <th class="kanban">On menu</th>
- 
+
                     <th class="kanban">Recent experiments</th>
                 </tr>
                 <tr>
-                    <td class="kanban">                        
+                    <td class="kanban">
                         <ul>
                             <li><a href="hippressurecooking.com">Hip Pressure Cooking</a></li>
                         <ul>
@@ -174,11 +200,11 @@
                     <th class="kanban">Queue</th>
 
                     <th class="kanban">Current</th>
- 
+
                     <th class="kanban">Recent</th>
                 </tr>
                 <tr>
-                    <td class="kanban">                        
+                    <td class="kanban">
                         <ul>
                             <li>(empty)</li>
                         <ul>
@@ -228,7 +254,7 @@
                     <th class="kanban">Recently finished</th>
                 </tr>
                 <tr>
-                    <td class="kanban">                        
+                    <td class="kanban">
                         <ul>
                             <li><a href="http://datascienceatthecommandline.com/">Data Science at the Command Line</a></li>
                         <ul>
@@ -236,7 +262,7 @@
                     <td class="kanban">
                         <ul>
                             <li><a href="http://www.audible.com/pd/Self-Development/Get-Up-Audiobook/B00LZZQBIY">Get Up!: Why Your Chair Is Killing You and What You Can Do About It by James A. Levine</a></li>
-       
+
                         </ul>
                     <td class="kanban">
                         <ul>
@@ -244,7 +270,7 @@
                             <li><a href="http://www.amazon.com/How-Fail-Almost-Everything-Still/dp/1591846919/">How to Fail at Almost Everything and Still Win Big: Kind of the Story of My Life by Scott Adams</a></li>
                             <li><a href="http://www.amazon.com/Dataclysm-When-Think-Ones-Looking/dp/0385347375/">Dataclysm: Who We Are (When We Think No One's Looking) by Christian Rudder</a></li>
                             <li><a href="http://goodreads.com/naveen_sinha">...older...</a></li>
-          
+
                         </ul>
                     <td class="kanban">
                 </tr>
@@ -263,26 +289,18 @@
                 <a href="http://www.twitter.com/nsinha"><i class="fa fa-twitter"></i></a>
             </h3>
 
-
-            <p>&copy; Naveen N. Sinha 2015</p>
-
-        </article>
-
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+              <p>&copy; Naveen N. Sinha 2015</p>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <a href="https://github.com/google/material-design-lite/blob/master/templates/article/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
+    <script src="../../material.min.js"></script>
+  </body>
 </html>
