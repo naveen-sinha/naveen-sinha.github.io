@@ -131,6 +131,11 @@ h3 {
     padding-top: 0;
 }
 
+h4 {
+    margin: 2em 0 0.75em 0;
+    padding-top: 0;
+}
+
 a {
     color: #c0392b;
     text-decoration: none;
