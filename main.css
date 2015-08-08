@@ -131,6 +131,11 @@ h3 {
     padding-top: 0;
 }
 
+h4 {
+    margin: 2em 0 0.75em 0;
+    padding-top: 0;
+}
+
 a {
     color: #c0392b;
     text-decoration: none;
@@ -198,12 +203,12 @@ thead.timeline td {
 table.kanban {
     /*border: 1px solid #ccc;*/
 
-}   
+}
 
 th.kanban {
     border: 1px solid #ccc;
     padding: 0.4em;
-    text-align: center;  
+    text-align: center;
     vertical-align: top;
     width: 33.3%;
 }
@@ -211,7 +216,7 @@ th.kanban {
 td.kanban {
     /*border: 1px solid #ccc;*/
     padding: 0 0 0 0;
-    text-align: left;  
+    text-align: left;
     vertical-align: top;
     width: 33.3%;
 }
