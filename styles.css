@@ -51,7 +51,7 @@
 }
 
 .demo-footer {
-  padding-left: 40px;
+  padding: 40px 0 0 0;
 }
 
 .demo-footer .mdl-mini-footer--link-list a {
