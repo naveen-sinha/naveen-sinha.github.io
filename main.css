@@ -12,7 +12,7 @@
 
 html {
     color: #222;
-    font-size: 1em;
+    font-size: 3em;
     line-height: 1.4;
 }
 
@@ -103,7 +103,7 @@ body {
     background-color: #ecf0f1;
 
     font-family: 'Alegreya Sans', sans-serif;;
-    font-size: 16px;
+    font-size: 24px;
     color: #34495e;
 
     max-width: 800px;
@@ -121,19 +121,32 @@ h1 {
 }
 
 h2 {
-    font-size: 1em;
-    margin: 0.2em 0 1em 0;
+    font-size: 3em;
+    margin: 1em 0 1em 0;
     padding-top: 0;
 }
 
 h3 {
-    margin: 2.50em 0 1em 0;
+    margin: 2.5em 0 1em 0;
     padding-top: 0;
 }
 
 h4 {
     margin: 2em 0 0.75em 0;
     padding-top: 0;
+}
+
+p {
+    font-size: 1.6em;
+    line-height: 1.6em;
+    text-decoration: none;
+    margin: 2em 0 0.75em 0;
+}
+
+.demo-footer p {
+  font-size: 0.8em;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
 }
 
 a {
