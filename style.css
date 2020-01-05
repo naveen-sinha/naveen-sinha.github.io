@@ -1,4 +1,16 @@
 body {
-    margin: 2%;
-    padding: 2%
+    margin: 4%;
+    padding: 1%
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 18px;
 }
