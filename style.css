@@ -1,20 +1,44 @@
+:root {
+/* CSS */
+    --midnight-green-eagle-green: hsla(188, 56%, 23%, 1);
+    --medium-turquoise: hsla(176, 56%, 55%, 1);
+    --mint-cream: hsla(120, 100%, 98%, 1);
+    --bittersweet: hsla(0, 100%, 71%, 1);
+    --naples-yellow: hsla(50, 100%, 71%, 1);
+}
+
 body {
     margin: 4%;
     padding: 1%
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--bittersweet);
 }
 
 h2 {
+    font-weight: 100;
     font-size: 28px;
+    color: var(--bittersweet);
 }
 
 h3 {
+    font-weight: 100;
     font-size: 18px;
 }
 
 li {
+    font-weight: 100;
     padding-bottom: 18px;
+}
+
+.siimple-link {
+    font-weight: 100;
+    color: var(--midnight-green-eagle-green);
+}
+
+.siimple-navbar {
+    color: var(--medium-turquoise);
 }
