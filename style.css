@@ -39,6 +39,10 @@ li {
     color: var(--midnight-green-eagle-green);
 }
 
-.siimple-navbar {
-    color: var(--medium-turquoise);
+.siimple-navbar-title {
+    color: var(--midnight-green-eagle-green);
+}
+
+.siimple-navbar-item {
+    color: var(--midnight-green-eagle-green);
 }
