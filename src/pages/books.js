@@ -25,12 +25,12 @@ export default function Books() {
           title="The New Jim Crow: Mass Incarceration in the Age of Colorblindness"
         />
         <Book
-          link="https://www.amazon.com/No-Filter-Inside-Story-Instagram/dp/1982126809"
-          title="No Filter: The Inside Story of Instagram"
-        />
-        <Book
           link="https://www.amazon.com/Lies-My-Teacher-Told-Everything/dp/1620973928/"
           title="Lies My Teacher Told Me: Everything Your American History Textbook Got Wrong"
+        />
+        <Book
+          link="https://www.amazon.com/Young-China-Restless-Generation-Country/dp/1250078814"
+          title="Young China: How the Restless Generation Will Change Their Country and the World"
         />
         <Book
           link="https://www.amazon.com/Road-Reality-Complete-Guide-Universe/dp/0679776311"
@@ -45,8 +45,7 @@ export default function Books() {
       <ul>
         <Book
           link="https://www.amazon.com/4-Hour-Chef-Cooking-Learning-Anything/dp/1328519163"
-          title="The 4-Hour Chef: The Simple Path to Cooking Like a Pro, Learning Anything, and Living the Good
-                    Life"
+          title="The 4-Hour Chef: The Simple Path to Cooking Like a Pro, Learning Anything, and Living the Good Life"
         />
         <Book
           link="https://www.amazon.com/Breath-New-Science-Lost-Art/dp/0735213615/"
@@ -58,22 +57,19 @@ export default function Books() {
         />
         <Book
           link="https://www.amazon.com/Dirt-Soil-Familys-Regenerative-Agriculture/dp/1603587632"
-          title="Dirt
-                    to Soil:
-                    One Family’s Journey into Regenerative Agriculture"
+          title="Dirt to Soil: One Family’s Journey into Regenerative Agriculture"
         />
         <Book
           link="https://www.amazon.com/Discipline-Equals-Freedom-Field-Manual/dp/1250156947"
-          title="Discipline
-                    Equals
-                    Freedom"
+          title="Discipline Equals Freedom"
         />
         <Book
           link="https://www.amazon.com/Folks-This-Aint-Normal-Healthier/dp/0892968192"
-          title="Folks,
-                    This Ain't
-                    Normal: A Farmer's Advice for Happier Hens, Healthier People, and a Better
-                    World"
+          title="Folks, This Ain't Normal: A Farmer's Advice for Happier Hens, Healthier People, and a Better World"
+        />
+        <Book
+          link="https://www.amazon.com/Gaijin-Cookbook-Japanese-Lifelong-Outsider/dp/1328954358"
+          title="The Gaijin Cookbook: Japanese Recipes from a Chef, Father, Eater, and Lifelong Outsider"
         />
         <Book
           link="https://www.amazon.com/Growing-Revolution-Bringing-Soil-Back/dp/0393608328"
@@ -86,6 +82,10 @@ export default function Books() {
         <Book
           link="https://www.amazon.com/How-Happier-Parent-Raising-Family/dp/0735210470"
           title="How to be a Happier Parent: Raising a Family, Having a Life, and Loving (Almost) Every Minute"
+        />
+        <Book
+          link="https://www.amazon.com/Ivan-Ramen-Obsession-Recipes-Unlikely/dp/1607744465"
+          title="Ivan Ramen: Love, Obsession, and Recipes from Tokyo's Most Unlikely Noodle Joint"
         />
         <Book
           link="https://www.amazon.com/Japanese-Farm-Nancy-Singleton-Hachisu/dp/1449418295"
@@ -166,6 +166,10 @@ export default function Books() {
         <Book
           link="https://www.amazon.com/Man-Who-Solved-Market-Revolution/dp/073521798X"
           title="The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution"
+        />
+        <Book
+          link="https://www.amazon.com/No-Filter-Inside-Story-Instagram/dp/1982126809"
+          title="No Filter: The Inside Story of Instagram"
         />
         <Book
           link="https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X"
@@ -263,6 +267,10 @@ export default function Books() {
         <Book
           link="https://www.amazon.com/This-View-Life-Completing-Revolution/dp/1101870206"
           title="This View of Life: Completing the Darwinian Revolution"
+        />
+        <Book
+          link="https://www.amazon.com/Three-Tigers-One-Mountain-Conflicts-ebook/dp/B07S9MJR2P/"
+          title="Three Tigers, One Mountain: A Journey Through the Bitter History and Current Conflicts of China, Korea, and Japan"
         />
         <Book
           link="https://www.amazon.com/Tools-Titans-Billionaires-World-Class-Performers/dp/1328683788"
