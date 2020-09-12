@@ -38,6 +38,16 @@ export default function Podcasts() {
         />
       </ul>
 
+      <h2>Business</h2>
+      <ul>
+        <Podcast link="https://www.acquired.fm/" title="Acquired" />
+        <Podcast link="https://analyse.asia/" title="Analyse Asia" />
+        <Podcast
+          link="https://www.disruptingjapan.com/"
+          title="Disrupting Japan"
+        />
+      </ul>
+
       <h2>Food</h2>
 
       <ul>
@@ -65,18 +75,12 @@ export default function Podcasts() {
           title="Invest Like the Best"
         />
         <Podcast
-          link="https://animalspiritspod.libsyn.com/"
-          title="Animal Spirits"
-        />
-        <Podcast link="https://hiddenforces.io/" title="Hidden Forces" />
-        <Podcast
-          link="https://lexfridman.com/ai/"
-          title="Artificial Intelligence: AI Podcast"
+          link="https://lexfridman.com/podcast/"
+          title="Lex Friedman Podcast"
         />
         <Podcast
           link="https://podcasts.voxmedia.com/show/land-of-the-giants"
-          title="Land of the
-                    Giants"
+          title="Land of the Giants"
         />
         <Podcast
           link="https://www.dataengineeringpodcast.com/"
@@ -91,8 +95,7 @@ export default function Podcasts() {
         <Podcast link="https://after-on.com/" title="After On" />
         <Podcast
           link="https://www.listennotes.com/podcasts/long-now-conversations-at-the-interval-the-i_IflpMs5Y0/"
-          title="Long
-                    Now: Conversations at the Interval"
+          title="Long Now: Conversations at the Interval"
         />
         <Podcast
           link="https://www.preposterousuniverse.com/podcast/"

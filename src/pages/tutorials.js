@@ -25,8 +25,24 @@ export default function Tutorials() {
           link="https://www.youtube.com/playlist?list=PLO9pkowc_99ZhP2yuPU8WCfFNYEx2IkwR"
         />
         <Tutorial
+          title="Conducto"
+          link="https://conducto.com/docs/getting-started"
+        />
+        <Tutorial
           title="Data Science in Visual Studio Code"
           link="https://code.visualstudio.com/docs/python/data-science-tutorial"
+        />
+        <Tutorial
+          title="Great Expectations"
+          link="https://docs.greatexpectations.io/en/latest/guides/tutorials.html"
+        />
+        <Tutorial
+          title="Kedro"
+          link="https://kedro.readthedocs.io/en/stable/index.html"
+        />
+        <Tutorial
+          title="Prefect"
+          link="https://docs.prefect.io/core/tutorial/01-etl-before-prefect.html"
         />
       </ul>
 
