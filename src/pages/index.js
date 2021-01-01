@@ -6,8 +6,7 @@ const IndexPage = () => (
   <Layout>
     <h1>Welcome</h1>
     <p>
-      I'm a scientist fascinated by the interplay between food, data, and
-      business.
+    I combine approaches from experimental physics and software engineering to answer business-critical, data-intensive questions for fast-growing companies, with applications ranging from personal health to climate change.
     </p>
     <p>
       I'm currently on the Field Experimentation team at{" "}
