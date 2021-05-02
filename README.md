@@ -1,1 +1,3 @@
-View the site [here](https://nsinha.com/index.html).
+# Naveen N. Sinha
+
+Welcome to my personal website. This version was built with [Hugo](https://gohugo.io/).
