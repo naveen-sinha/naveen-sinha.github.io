@@ -27,7 +27,7 @@ jobs:
         run: touch ./public/.nojekyll
         
       - name: add CNAME
-        run: echo "nsinha.com" > .public/CNAME
+        run: echo "nsinha.com" > ./public/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
