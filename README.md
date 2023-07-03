@@ -1,3 +1,3 @@
-# Naveen N. Sinha
+# Naveen Sinha
 
-Welcome to my personal website. This version was built with [Hugo](https://gohugo.io/).
+Welcome to my personal website.
