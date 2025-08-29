@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-08-29T16:49:49-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Naveen Sinha’s Microblog</title><subtitle>Short notes, quick links, work-in-progress.</subtitle><entry><title type="html">Favorite Books</title><link href="http://localhost:4000/2025/08/29/favorite-books/" rel="alternate" type="text/html" title="Favorite Books" /><published>2025-08-29T00:00:00-04:00</published><updated>2025-08-29T00:00:00-04:00</updated><id>http://localhost:4000/2025/08/29/favorite-books</id><content type="html" xml:base="http://localhost:4000/2025/08/29/favorite-books/"><![CDATA[<h2 id="biographies">Biographies</h2>
+
+<ul>
+  <li>A Man for All Markets</li>
+  <li>Surely You’re Joking Mr. Feynman</li>
+</ul>
+
+<h2 id="philosophy">Philosophy</h2>
+
+<ul>
+  <li>The Beginning of Infinity</li>
+  <li>The Road to Reality</li>
+</ul>
+
+<h2 id="science-and-technology">Science and Technology</h2>
+
+<ul>
+  <li>The Case for Mars</li>
+  <li>The Millenial Project</li>
+</ul>
+
+<h2 id="science-fiction">Science Fiction</h2>
+
+<ul>
+  <li>Anathem</li>
+  <li>Dune</li>
+  <li>Stories of Your Life and Others</li>
+</ul>]]></content><author><name></name></author><category term="books" /><summary type="html"><![CDATA[Biographies]]></summary></entry></feed>
