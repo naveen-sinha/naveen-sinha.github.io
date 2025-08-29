@@ -12,6 +12,9 @@ tags: [favorites]
 
 ## Digital
 
+- Libby
 - Notion
 - Obsidian
+- Readwise
 - Reflect
+- Snipd
