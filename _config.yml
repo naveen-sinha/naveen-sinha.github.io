@@ -1,0 +1,19 @@
+title: "Naveen Sinha"
+description: "Short notes, quick links, work-in-progress."
+url: "https://www.nsinha.com"
+baseurl: "" 
+theme: minima
+
+# Blogging basics
+permalink: /:year/:month/:day/:title/
+paginate: 10
+paginate_path: "/page:num"
+
+# Feeds & SEO
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Optional: micro-posts look cleaner without dates in titles on index
+minima:
+  date_format: "%b %-d"
