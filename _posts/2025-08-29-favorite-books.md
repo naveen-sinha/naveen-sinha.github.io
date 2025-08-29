@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Favorite Books"
-tags: [books]
+tags: [favorites]
 ---
 
 ## Biographies

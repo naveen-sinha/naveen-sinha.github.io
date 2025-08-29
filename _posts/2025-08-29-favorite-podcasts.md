@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Favorite Podcasts"
-tags: [books]
+tags: [favorites]
 ---
 
 ## AI
