@@ -2,4 +2,4 @@
 .cache
 node_modules
 public
-_site/
+_site
