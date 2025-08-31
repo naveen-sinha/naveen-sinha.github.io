@@ -1,0 +1,35 @@
+---
+---
+
+@import "minima";
+
+/* Shrink post title size on home page */
+.home .post-list .post-link {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.home .post-list .post-meta {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.home .post-list {
+    margin-top: 1rem;
+}
+
+.home .post-list li {
+  margin-bottom: 0.75rem;  // default is ~2rem
+}
+
+/* Make the footer columns flex and give the description room */
+.site-footer .footer-col-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-footer .footer-col { width: auto; }
+
+.site-footer .footer-col-1 { flex: 0 0 120px; }   /* name/email column */
+.site-footer .footer-col-2 { flex: 1 1 720px; }   /* description → gets space */
+.site-footer .footer-col-3 { flex: 0 0 160px; }   /* social links */
