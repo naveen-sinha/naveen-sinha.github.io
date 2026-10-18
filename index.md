@@ -2,13 +2,17 @@
 layout: home
 title: "Optimistic enough to try, skeptical enough to experiment"
 ---
+Optimistic enough to try, skeptical enough to experiment
 
-I build systems for messy domains--human research, home kitchens, and analog ideas--where the goal is the same: generate signal, ignore noise, and make better bets.
+I build systems for experimentation in messy domains, including home cooking, large-scale agriculture, and human physiology.
 
-🚀 Currently I lead research operations at [Oura](https://ouraring.com/), where I build systems for scalable data collection for next-gen health sensing. My team drives groundbreaking research, from internal studies to external collaborations, leading to scientific publications and validating Oura's capabilities in [health sensing](https://ouraring.com/blog/category/oura-101/oura-in-research/).
+Currently I lead research operations at Oura, where my team runs a portfolio of human research studies both internally and together with collaborators around the world. These studies provide data for the next generation of health sensing and enable broader scientific research. 
 
-🧠 Before Oura, I earned my PhD in Applied Physics at Harvard and co-founded the iconic [Science & Cooking](https://pll.harvard.edu/course/science-and-cooking) course. My fascination with the quantified self movement led me to [Fitbit](https://www.fitbit.com/), where I built business intelligence and data science systems. Later, as an early member of [Indigo Ag](https://www.indigoag.com/)'s Innovation Team, I helped shape the foundation of their carbon credits program. The common theme: building teams of curious, ambitious people to tackle complex problems.
+Before Oura, I earned my PhD in Applied Physics at Harvard and co-founded the Science & Cooking course. My fascination with the quantified self movement led me to Fitbit, where I built business intelligence and data science systems. Later, as an early member of Indigo Ag’s Innovation Team, I helped shape the foundation of their carbon credits program. The common theme: how to learn from expert practitioners and build systems that extend their reach.
 
-🏋️‍♂️ Outside work, you may find me at a CrossFit WOD, BJJ class, or half-marathon training run. I'm an avid reader, an experimental cook, and endlessly curious about the intersection of physics, psychology, randomness, and human performance.
+Outside work, I'm a father of two young kids. You may find me trying a recipe from an unfamiliar cuisine, borrowing a half-dozen books from the local library, or learning new kettlebell skills in my home gym. Being a dad has also inspired new interests in local ecology, city planning, and home construction techniques. 
 
-*All opinions are my own and not reflective of Oura or previous employers.*
+I enjoy hearing from people exploring complex systems in unexpected places.
+
+All opinions are my own and not reflective of Oura or previous employers.
+
