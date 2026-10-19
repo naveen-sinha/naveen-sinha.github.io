@@ -2,6 +2,8 @@
 layout: home
 title: "Optimistic enough to try, skeptical enough to experiment"
 ---
+Optimistic enough to try, skeptical enough to experiment
+
 I build systems for experimentation in messy domains, including home cooking, large-scale agriculture, and human physiology.
 
 Currently I lead research operations at [Oura](https://ouraring.com/), where my team runs a portfolio of human research studies both internally and together with collaborators around the world. These studies provide data for the next generation of health sensing and enable broader scientific research. 
@@ -13,3 +15,4 @@ Outside work, I'm a father of two young kids. You may find me trying a recipe fr
 I enjoy hearing from people exploring complex systems in unexpected places.
 
 *All opinions are my own and not reflective of Oura or previous employers.*
+
